@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
+ 
 <head>
+   <script data-cfasync="false" src="https://ahuramazda.org/1/fa13333ca41feab44260098093170fe1"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今夜、誰とつながる？</title>
@@ -122,12 +124,11 @@
             position: relative;
             overflow: hidden;
         }
-        .file-video-thumbnail iframe {
-            width: 300%;
-            height: 300%;
-            border: none;
-            transform: translate(-33%, -33%) scale(0.5);
-            pointer-events: none;
+        .file-video-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .play-overlay {
             position: absolute;
@@ -250,18 +251,22 @@
         .popup-body h4 {color: #fff; margin-bottom: 12px; font-size: 1rem;}
         .popup-body ol {padding-left: 20px; margin-bottom: 18px;}
         .popup-body li {color: #c0c0c8; margin: 6px 0; font-size: 0.9rem;}
-        .popup-btn {
+        .popup-link-btn {
+            display: block;
             width: 100%;
             background: #2563eb;
             color: #fff;
             border: none;
             border-radius: 6px;
-            padding: 11px;
+            padding: 12px;
             font-size: 0.95rem;
             font-weight: 500;
             cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s;
         }
-        .popup-btn:hover {background: #1d4ed8;}
+        .popup-link-btn:hover {background: #1d4ed8;}
     </style>
 </head>
 <body>
@@ -290,12 +295,12 @@
         <div style="font-size:13px; color:#777;">3 アイテム</div>
     </div>
 
-    <!-- GRID KARTU — Video otomatis jadi thumbnail -->
+    <!-- GRID KARTU — Thumbnail Manual -->
     <div class="files-grid">
         <!-- Item 1 -->
         <div class="file-item" onclick="openPopup('p1')">
             <div class="file-video-thumbnail">
-                <iframe src="https://drive.google.com/file/d/1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ/preview?autoplay=1&mute=1&loop=1" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+                <img src="https://drive.google.com/thumbnail?id=1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ&sz=w600" alt="Thumbnail" loading="lazy">
                 <div class="play-overlay"><span>▶</span></div>
             </div>
             <div class="file-info">
@@ -309,7 +314,7 @@
         <!-- Item 2 -->
         <div class="file-item" onclick="openPopup('p2')">
             <div class="file-video-thumbnail">
-                <iframe src="https://drive.google.com/file/d/1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu/preview?autoplay=1&mute=1&loop=1" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+                <img src="https://drive.google.com/thumbnail?id=1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu&sz=w600" alt="Thumbnail" loading="lazy">
                 <div class="play-overlay"><span>▶</span></div>
             </div>
             <div class="file-info">
@@ -323,7 +328,7 @@
         <!-- Item 3 -->
         <div class="file-item" onclick="openPopup('p3')">
             <div class="file-video-thumbnail">
-                <iframe src="https://drive.google.com/file/d/1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz/preview?autoplay=1&mute=1&loop=1" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe>
+                <img src="https://drive.google.com/thumbnail?id=1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz&sz=w600" alt="Thumbnail" loading="lazy">
                 <div class="play-overlay"><span>▶</span></div>
             </div>
             <div class="file-info">
@@ -337,63 +342,63 @@
     </div>
 
     <div class="action-section">
-        <button class="main-btn">配信中の女性を見る ＞</button>
+       <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="main-btn">その他の動画 ＞</a>
     </div>
 </div>
 
-<!-- POP-UP 1 — Auto Play Saat Terbuka -->
+<!-- POP-UP 1 -->
 <div id="p1" class="popup-overlay">
     <div class="popup-box">
         <span class="popup-close" onclick="closePopup('p1')">&times;</span>
         <div class="popup-video-container">
-            <iframe id="video-p1" src="https://drive.google.com/file/d/1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ/preview?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe id="video-p1" src="https://drive.google.com/file/d/1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ/preview?autoplay=1&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="popup-body">
             <h4>手順を確認してください</h4>
             <ol>
-                <li>動画は自動的に再生されます ✅</li>
-                <li>音量は調整できます</li>
-                <li>アプリを入れて視聴する</li>
+                <li>動画を再生して確認</li>
+                <li>詳しくはプロフィールへ</li>
+                <li>アプリをインストール</li>
             </ol>
-            <button class="popup-btn">アプリを入れて視聴する →</button>
+            <a href="https://hex.hoprly.com/s?p=o0J6p3DlLP5KwAf&s1=SUBID1HERE&s2=SUBID2HERE" target="_blank" class="popup-link-btn">アプリをインストールして視聴する →</a>
         </div>
     </div>
 </div>
 
-<!-- POP-UP 2 — Auto Play Saat Terbuka -->
+<!-- POP-UP 2 -->
 <div id="p2" class="popup-overlay">
     <div class="popup-box">
         <span class="popup-close" onclick="closePopup('p2')">&times;</span>
         <div class="popup-video-container">
-            <iframe id="video-p2" src="https://drive.google.com/file/d/1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu/preview?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe id="video-p2" src="https://drive.google.com/file/d/1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu/preview?autoplay=1&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="popup-body">
             <h4>手順を確認してください</h4>
             <ol>
-                <li>動画は自動的に再生されます ✅</li>
-                <li>音量は調整できます</li>
-                <li>アプリを入れて視聴する</li>
+                <li>動画を再生して確認</li>
+                <li>詳しくはプロフィールへ</li>
+                <li>アプリをインストール</li>
             </ol>
-            <button class="popup-btn">アプリを入れて視聴する →</button>
+            <a href="https://hex.hoprly.com/s?p=o0J6p3DlLP5KwAf&s1=SUBID1HERE&s2=SUBID2HERE" target="_blank" class="popup-link-btn">アプリをインストールして視聴する →</a>
         </div>
     </div>
 </div>
 
-<!-- POP-UP 3 — Auto Play Saat Terbuka -->
+<!-- POP-UP 3 -->
 <div id="p3" class="popup-overlay">
     <div class="popup-box">
         <span class="popup-close" onclick="closePopup('p3')">&times;</span>
         <div class="popup-video-container">
-            <iframe id="video-p3" src="https://drive.google.com/file/d/1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz/preview?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <iframe id="video-p3" src="https://drive.google.com/file/d/1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz/preview?autoplay=1&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="popup-body">
             <h4>手順を確認してください</h4>
             <ol>
-                <li>動画は自動的に再生されます ✅</li>
-                <li>音量は調整できます</li>
-                <li>アプリを入れて視聴する</li>
+                <li>動画を再生して確認</li>
+                <li>詳しくはプロフィールへ</li>
+                <li>アプリをインストール</li>
             </ol>
-            <button class="popup-btn">アプリを入れて視聴する →</button>
+            <a href="https://hex.hoprly.com/s?p=o0J6p3DlLP5KwAf&s1=SUBID1HERE&s2=SUBID2HERE" target="_blank" class="popup-link-btn">アプリをインストールして視聴する →</a>
         </div>
     </div>
 </div>
@@ -409,20 +414,18 @@ const videoSrc = {
 function openPopup(id) {
     document.getElementById(id).style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    // Auto Play — tambah &autoplay=1 saat pop-up dibuka
     const videoIframe = document.getElementById('video-' + id);
-    if (videoIframe && videoIframe.src.indexOf('&autoplay=1') === -1) {
-        videoIframe.src = videoSrc[id] + '?autoplay=1';
+    if (videoIframe && videoIframe.src.indexOf('autoplay=1') === -1) {
+        videoIframe.src = videoSrc[id] + '?autoplay=1&controls=0';
     }
 }
 
 function closePopup(id) {
     document.getElementById(id).style.display = 'none';
     document.body.style.overflow = 'auto';
-    // Hentikan video saat pop-up ditutup
     const videoIframe = document.getElementById('video-' + id);
     if (videoIframe) {
-        videoIframe.src = videoSrc[id]; // Reset untuk hentikan
+        videoIframe.src = videoSrc[id];
     }
 }
 
@@ -431,7 +434,6 @@ document.querySelectorAll('.popup-overlay').forEach(o => {
         if (e.target === o) { 
             o.style.display = 'none'; 
             document.body.style.overflow='auto';
-            // Hentikan video saat klik luar
             const id = o.id;
             const videoIframe = document.getElementById('video-' + id);
             if (videoIframe) {
@@ -441,6 +443,9 @@ document.querySelectorAll('.popup-overlay').forEach(o => {
     });
 });
 </script>
+
+
 <script type="text/javascript">var _Hasync=_Hasync||[];_Hasync.push(["Histats.start","1,4977659,4,0,0,0,00010000"]);_Hasync.push(["Histats.fasi","1"]);_Hasync.push(["Histats.track_hits",""]);(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//s10.histats.com/js15_as.js",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)})();</script><noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4977659&101" alt="" border="0"></a></noscript>
-</body>
+<script data-cfasync="false" src="https://brijmohan.org/14/9ec696b92ec9af21c443ec82a5b5a224"></script>
+  </body>
 </html>
