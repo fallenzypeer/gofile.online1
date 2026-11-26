@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ プレミアム動画 — 厳選されたコンテンツ</title>
 <script>
-    const WAKTU_RESET = 300000; // 5分
+    const WAKTU_RESET = 300000; // 5 menit
     const KUNCI_STORAGE = 'saikou_suihen';
     const URL_TUJUAN = "https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f";
 
@@ -16,11 +16,12 @@
     if (!saikouSuihen || Date.now() - parseInt(saikouSuihen) > WAKTU_RESET) {
         setTimeout(function() {
             localStorage.setItem(KUNCI_STORAGE, Date.now());
-            history.replaceState(null, '', '#dialihkan');
+            // Langsung pindah di halaman yang sama
             window.location.href = URL_TUJUAN;
-        }, 3000);
+        }, 7000); // 7 detik
     }
 </script>
+
 
 
     <style>
