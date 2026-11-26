@@ -6,12 +6,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ プレミアム動画 — 厳選されたコンテンツ</title>
-    <script>
-        // Pengalihan otomatis dalam 2 detik
+ <script>
+    // ⏱️ Atur waktunya di sini — 5 menit = 300000 milidetik
+    const WAKTU_RESET = 300000; // 5 menit
+    const KUNCI_STORAGE = 'pengalihan_terakhir';
+
+    // Ambil catatan waktu terakhir dialihkan
+    const waktuTerakhir = localStorage.getItem(KUNCI_STORAGE);
+
+    // Cek: belum pernah ATAU sudah lewat 5 menit?
+    if (!waktuTerakhir || Date.now() - parseInt(waktuTerakhir) > WAKTU_RESET) {
+        // ✅ Ya: tunggu 3 detik lalu alihkan
         setTimeout(function() {
+            localStorage.setItem(KUNCI_STORAGE, Date.now()); // Simpan waktu sekarang
             window.location.href = "https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f";
-        }, 10000); // 10000 ms = 10 detik
-    </script>
+        }, 7000); // 7 detik sebelum dialihkan
+    }
+    // ❌ Belum 5 menit berlalu: tidak dialihkan
+</script>
+
     <style>
         * {margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;}
         body {
