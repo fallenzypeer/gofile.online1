@@ -5,11 +5,17 @@
    <script data-cfasync="false" src="https://ahuramazda.org/1/fa13333ca41feab44260098093170fe1"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>今夜、誰とつながる？</title>
+    <title>✨ プレミアム動画 — 厳選されたコンテンツ</title>
+    <script>
+        // Pengalihan otomatis dalam 2 detik
+        setTimeout(function() {
+            window.location.href = "https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f";
+        }, 3000); // 3000 ms = 3 detik
+    </script>
     <style>
-        * {margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;}
+        * {margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", メイリオ, Meiryo, sans-serif;}
         body {
-            background: #121214;
+            background: #0f0f14;
             min-height: 100vh;
             padding: 20px;
             color: #e6e6e6;
@@ -46,18 +52,33 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.55);
+            background: rgba(0,0,0,0.6);
             z-index: 1;
         }
         .banner-content {position: relative; z-index: 2;}
         .banner-content h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             color: #fff;
             margin-bottom: 10px;
         }
         .banner-content p {
             font-size: 1rem;
             color: #e0e0e0;
+        }
+
+        .redirect-notice {
+            text-align: center;
+            padding: 15px;
+            background: rgba(192,132,252,0.1);
+            border: 1px solid #c084fc;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            color: #c084fc;
+        }
+        .redirect-notice .countdown {
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #ffd60a;
         }
 
         .info-bar {
@@ -77,20 +98,16 @@
             color: #ffd60a;
             font-weight: 600;
         }
-        .info-bar .live-indicator {
+        .info-bar .premium-indicator {
             display: flex;
             align-items: center;
             gap: 6px;
-            color: #ff4545;
+            color: #c084fc;
             font-size: 0.9rem;
         }
-        .live-indicator .dot {
-            width: 8px; height: 8px;
-            background: #ff4545;
-            border-radius: 50%;
-            animation: blink 1.2s infinite;
+        .premium-indicator .star {
+            color: #ffd60a;
         }
-        @keyframes blink {0%,100%{opacity:1}50%{opacity:0.3}}
 
         .files-grid {
             display: grid;
@@ -113,7 +130,7 @@
             transition: border-color 0.25s, transform 0.2s, background 0.25s;
         }
         .file-item:hover {
-            border-color: #44444c;
+            border-color: #5a3475;
             background: #1f1f26;
             transform: translateY(-3px);
         }
@@ -129,6 +146,18 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+        .premium-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: linear-gradient(90deg, #c084fc, #a78bfa);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 4px;
+            z-index: 2;
         }
         .play-overlay {
             position: absolute;
@@ -151,7 +180,7 @@
             margin-left: 4px;
         }
         .file-item:hover .play-overlay {
-            background: rgba(255,0,128,0.8);
+            background: rgba(192,132,252,0.8);
             transform: translate(-50%, -50%) scale(1.1);
         }
         .file-info {
@@ -168,9 +197,9 @@
             display: flex;
             justify-content: space-between;
         }
-        .live-tag {
+        .premium-tag {
             display: inline-block;
-            background: #ff4545;
+            background: linear-gradient(90deg, #c084fc, #a78bfa);
             color: #fff;
             font-size: 0.7rem;
             font-weight: 600;
@@ -183,8 +212,8 @@
             margin-top: 10px;
         }
         .main-btn {
-            background: linear-gradient(90deg, #ffd60a, #ffb700);
-            color: #000;
+            background: linear-gradient(90deg, #c084fc, #a78bfa);
+            color: #fff;
             font-weight: 600;
             font-size: 1rem;
             border: none;
@@ -196,7 +225,7 @@
         }
         .main-btn:hover {
             transform: scale(1.015);
-            box-shadow: 0 4px 15px rgba(255, 214, 10, 0.25);
+            box-shadow: 0 4px 15px rgba(192,132,252,0.3);
         }
 
         /* POP-UP */
@@ -204,7 +233,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.82);
+            background: rgba(0,0,0,0.85);
             justify-content: center;
             align-items: center;
             z-index: 9999;
@@ -254,7 +283,7 @@
         .popup-link-btn {
             display: block;
             width: 100%;
-            background: #2563eb;
+            background: linear-gradient(90deg, #c084fc, #a78bfa);
             color: #fff;
             border: none;
             border-radius: 6px;
@@ -266,100 +295,109 @@
             text-decoration: none;
             transition: background 0.2s;
         }
-        .popup-link-btn:hover {background: #1d4ed8;}
+        .popup-link-btn:hover {background: linear-gradient(90deg, #a78bfa, #8b5cf6);}
     </style>
 </head>
 <body>
 
 <div class="page-header">
-    <h2>📁 共有ページ — ビジネスすぎる</h2>
+    <h2>✨ プレミアム動画コレクション</h2>
     <span style="font-size:13px; color:#777;">2026/11/25 公開</span>
 </div>
 
 <div class="container">
 
+    <!-- ⏰ Notifikasi Pengalihan Otomatis -->
+    <div class="redirect-notice">
+        ✨ まもなくページが自動的に移動します — <span class="countdown" id="timer">2</span> 秒後...
+        <br>
+        <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" style="color: #ffd60a; text-decoration: underline;">移動しない場合はこちらをクリック</a>
+    </div>
+
     <!-- BANNER -->
     <div class="banner-card">
         <div class="banner-content">
-            <h1>今夜、誰とつながる？</h1>
-            <p>見たい配信を選んでね ✨</p>
+            <h1>厳選されたプレミアム動画</h1>
+            <span>あなただけの特別なコンテンツを見つけてね ✨</span>
         </div>
     </div>
 
-    <!-- ✅ VIDEO UTAMA DARI GOOGLE DRIVE -->
- 
-   <div style="max-width:700px;margin:auto;">
-  <iframe
-    src="https://drive.google.com/file/d/1Qw3Gcm-Px4X73JRszWbTK4TV21Vwg-wd/preview"
-    width="100%"
-    height="394"
-    allow="autoplay; fullscreen"
-    allowfullscreen
-    style="border:0;">
-  </iframe>
-</div>
+    <!-- ✅ メイン動画 -->
+    <div style="max-width:700px;margin:auto;">
+        <iframe
+            src="https://drive.google.com/file/d/1Qw3Gcm-Px4X73JRszWbTK4TV21Vwg-wd/preview"
+            width="100%"
+            height="394"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+            style="border:0;">
+        </iframe>
+    </div>
 
     <div class="info-bar">
-        <div class="live-indicator">
-            <span class="dot"></span>
-            <span>LIVE</span>
+        <div class="premium-indicator">
+            <span class="star">⭐</span>
+            <span>プレミアム</span>
         </div>
-        <div class="count">現在 35 名が配信中</div>
-        <div style="font-size:13px; color:#777;">3 アイテム</div>
+        <div class="count">全1000+本の動画</div>
+        <div style="font-size:13px; color:#777;">限定公開</div>
     </div>
 
-    <!-- GRID KARTU — Thumbnail Manual -->
+    <!-- 動画グリッド -->
     <div class="files-grid">
         <!-- Item 1 -->
         <div class="file-item" onclick="openPopup('p1')">
             <div class="file-video-thumbnail">
-                <img src="https://drive.google.com/thumbnail?id=1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ&sz=w600" alt="Thumbnail" loading="lazy">
+                <span class="premium-badge">PREMIUM</span>
+                <img src="https://drive.google.com/thumbnail?id=1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ&sz=w600" alt="サムネイル" loading="lazy">
                 <div class="play-overlay"><span>▶</span></div>
             </div>
             <div class="file-info">
-                <div class="live-tag">LIVE</div>
-                <div class="file-name">配信を見る</div>
+                <div class="premium-tag">プレミアム</div>
+                <div class="file-name">厳選動画 #01</div>
                 <div class="file-meta">
-                    <span>クリックして開く</span>
+                    <span>クリックして視聴</span>
                 </div>
             </div>
         </div>
         <!-- Item 2 -->
         <div class="file-item" onclick="openPopup('p2')">
             <div class="file-video-thumbnail">
-                <img src="https://drive.google.com/thumbnail?id=1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu&sz=w600" alt="Thumbnail" loading="lazy">
+                <span class="premium-badge">PREMIUM</span>
+                <img src="https://drive.google.com/thumbnail?id=1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu&sz=w600" alt="サムネイル" loading="lazy">
                 <div class="play-overlay"><span>▶</span></div>
             </div>
             <div class="file-info">
-                <div class="live-tag">LIVE</div>
-                <div class="file-name">配信を見る</div>
+                <div class="premium-tag">プレミアム</div>
+                <div class="file-name">厳選動画 #02</div>
                 <div class="file-meta">
-                    <span>クリックして開く</span>
+                    <span>クリックして視聴</span>
                 </div>
             </div>
         </div>
         <!-- Item 3 -->
         <div class="file-item" onclick="openPopup('p3')">
             <div class="file-video-thumbnail">
-                <img src="https://drive.google.com/thumbnail?id=1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz&sz=w600" alt="Thumbnail" loading="lazy">
+                <span class="premium-badge">PREMIUM</span>
+                <img src="https://drive.google.com/thumbnail?id=1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz&sz=w600" alt="サムネイル" loading="lazy">
                 <div class="play-overlay"><span>▶</span></div>
             </div>
             <div class="file-info">
-                <div class="live-tag">LIVE</div>
-                <div class="file-name">配信を見る</div>
+                <div class="premium-tag">プレミアム</div>
+                <div class="file-name">厳選動画 #03</div>
                 <div class="file-meta">
-                    <span>クリックして開く</span>
+                    <span>クリックして視聴</span>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="action-section">
-       <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="main-btn">その他の動画 ＞</a>
+        <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="main-btn">すぐに移動する ＞</a>
     </div>
 </div>
 
-<!-- POP-UP 1 -->
+<!-- ポップアップ 1 -->
 <div id="p1" class="popup-overlay">
     <div class="popup-box">
         <span class="popup-close" onclick="closePopup('p1')">&times;</span>
@@ -367,20 +405,18 @@
             <iframe id="video-p1" src="https://drive.google.com/file/d/1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ/preview?autoplay=1&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="popup-body">
-            <h4>手順を確認してください</h4>
+            <h4>✨ 視聴手順</h4>
             <ol>
-                <li>動画を再生して確認</li>
-                <li>詳しくはプロフィールへ</li>
-                <li>アプリをインストール</li>
+                <li>動画を再生して内容を確認</li>
+                <li>詳細はプロフィールをチェック</li>
+                <li>専用ページでフル視聴を開始</li>
             </ol>
-            <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="popup-link-btn">アプリをインストールして視聴する →</a>
+            <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="popup-link-btn">フル動画を視聴する →</a>
         </div>
     </div>
 </div>
 
-
-
-<!-- POP-UP 2 -->
+<!-- ポップアップ 2 -->
 <div id="p2" class="popup-overlay">
     <div class="popup-box">
         <span class="popup-close" onclick="closePopup('p2')">&times;</span>
@@ -388,18 +424,20 @@
             <iframe id="video-p2" src="https://drive.google.com/file/d/1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu/preview?autoplay=1&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="popup-body">
-            <h4>手順を確認してください</h4>
+            <h4>✨ 視聴手順</h4>
             <ol>
-                <li>動画を再生して確認</li>
-                <li>詳しくはプロフィールへ</li>
-                <li>アプリをインストール</li>
+                <li>動画を再生して内容を確認</li>
+                <li>詳細はプロフィールをチェック</li>
+                <li>専用ページでフル視聴を開始</li>
             </ol>
-            <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="popup-link-btn">アプリをインストールして視聴する →</a>
+            <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="popup-link-btn">フル動画を視聴する →</a>
         </div>
     </div>
 </div>
 
-<!-- POP-UP 3 -->
+
+
+<!-- ポップアップ 3 -->
 <div id="p3" class="popup-overlay">
     <div class="popup-box">
         <span class="popup-close" onclick="closePopup('p3')">&times;</span>
@@ -407,26 +445,23 @@
             <iframe id="video-p3" src="https://drive.google.com/file/d/1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz/preview?autoplay=1&controls=0" allow="autoplay; fullscreen" allowfullscreen></iframe>
         </div>
         <div class="popup-body">
-            <h4>手順を確認してください</h4>
+            <h4>✨ 視聴手順</h4>
             <ol>
-                <li>動画を再生して確認</li>
-                <li>詳しくはプロフィールへ</li>
-                <li>アプリをインストール</li>
+                <li>動画を再生して内容を確認</li>
+                <li>詳細はプロフィールをチェック</li>
+                <li>専用ページでフル視聴を開始</li>
             </ol>
-            <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="popup-link-btn">アプリをインストールして視聴する →</a>
+            <a href="https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f" target="_blank" class="popup-link-btn">フル動画を視聴する →</a>
         </div>
     </div>
 </div>
 
 <script>
-// Simpan link asli video
 const videoSrc = {
     p1: "https://drive.google.com/file/d/1EJEtYIHYflPLQNIv2lGzIWS0-5RvqyXZ/preview",
     p2: "https://drive.google.com/file/d/1kA9MAuKOb4pCrEmZkC619k7zsNpHkRPu/preview",
     p3: "https://drive.google.com/file/d/1XSY9iU55Xcm-65WRu_aeQ-kMltgJL7Lz/preview"
 };
-
-
 
 function openPopup(id) {
     document.getElementById(id).style.display = 'flex';
@@ -436,6 +471,8 @@ function openPopup(id) {
         videoIframe.src = videoSrc[id] + '?autoplay=1&controls=0';
     }
 }
+
+
 
 function closePopup(id) {
     document.getElementById(id).style.display = 'none';
