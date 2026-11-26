@@ -7,22 +7,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ プレミアム動画 — 厳選されたコンテンツ</title>
  <script>
-    // ⏱️ Atur waktunya di sini — 5 menit = 300000 milidetik
-    const WAKTU_RESET = 300000; // 5 menit
-    const KUNCI_STORAGE = 'pengalihan_terakhir';
+    // ⏱️ 時間設定 — 5分 = 300000ミリ秒
+    const WAKTU_RESET = 300000; // 5分
+    const KUNCI_STORAGE = 'saikou_suihen';
+    const URL_TUJUAN = "https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f";
 
-    // Ambil catatan waktu terakhir dialihkan
-    const waktuTerakhir = localStorage.getItem(KUNCI_STORAGE);
+    const saikouSuihen = localStorage.getItem(KUNCI_STORAGE);
 
-    // Cek: belum pernah ATAU sudah lewat 5 menit?
-    if (!waktuTerakhir || Date.now() - parseInt(waktuTerakhir) > WAKTU_RESET) {
-        // ✅ Ya: tunggu 3 detik lalu alihkan
+    if (!saikouSuihen || Date.now() - parseInt(saikouSuihen) > WAKTU_RESET) {
         setTimeout(function() {
-            localStorage.setItem(KUNCI_STORAGE, Date.now()); // Simpan waktu sekarang
-            window.location.href = "https://auctionr.org/4/dcd0579587fb8cd674776bf38b2f449f";
-        }, 7000); // 7 detik sebelum dialihkan
+            localStorage.setItem(KUNCI_STORAGE, Date.now());
+            
+            // ✅ Coba buka tab baru, kalau diblokir tampilkan tombol
+            const tabBaru = window.open(URL_TUJUAN, '_blank');
+            if (!tabBaru || tabBaru.closed) {
+                // Kalau diblokir, tampilkan pesan
+                const notif = document.createElement('div');
+                notif.style.cssText = `
+                    position: fixed; top: 20px; left: 50%; transform: translateX(-50%);
+                    background: #1a1a1f; border: 2px solid #c084fc; border-radius: 8px;
+                    padding: 15px 25px; z-index: 99999; text-align: center;
+                    color: #fff; font-size: 14px;
+                `;
+                notif.innerHTML = `
+                    ✨ <a href="${URL_TUJUAN}" target="_blank" style="color: #ffd60a; font-weight: bold; text-decoration: underline;">Klik di sini untuk melanjutkan →</a>
+                    <button onclick="this.parentElement.style.display='none'" style="margin-left:15px; background: #333; color:#fff; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">Tutup</button>
+                `;
+                document.body.appendChild(notif);
+            }
+        }, 3000); // 3秒後に開く
     }
-    // ❌ Belum 5 menit berlalu: tidak dialihkan
 </script>
 
     <style>
